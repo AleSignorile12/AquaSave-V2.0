@@ -550,6 +550,7 @@ struct DashboardView: View {
 
     // MARK: - Background / Small UI Helpers
 
+    
     private var dashboardBackground: some View {
         ZStack {
             Color(.systemBackground)
