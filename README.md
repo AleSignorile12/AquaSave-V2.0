@@ -79,11 +79,11 @@ flowchart LR
     Balance --> Widget["Widget<br/>(App Group)"]
 ```
 
-### 1. Data (`AcquaSave/Models/`)
+### 1. Data (`AquaSave/Models/`)
 
 SwiftData models: `Sensor` (name, location, category), `UsageEvent`, `SensorOutage`, `DayResult` and `Redemption`. Deleting a sensor deletes its readings and outages. New fields are optional or have defaults, so existing stores upgrade without a migration plan. The store lives in the App Group container so the widget can share it.
 
-### 2. Settling days (`AcquaSave/Logic/Credits.swift`)
+### 2. Settling days (`AquaSave/Logic/Credits.swift`)
 
 `Ledger.settle` runs whenever the app becomes active and walks every day since the last settled one:
 
@@ -92,11 +92,11 @@ SwiftData models: `Sensor` (name, location, category), `UsageEvent`, `SensorOuta
 - **No readings:** a day with no water at all earns 0, for the same reason.
 - **Settled:** credits for the liters saved, with the tier boost the home had *before* that day, so a boost never pays for the day that earned it.
 
-### 3. Waste (`AcquaSave/Logic/WasteStats.swift`)
+### 3. Waste (`AquaSave/Logic/WasteStats.swift`)
 
 `WasteKind` defines the three provable kinds, their colours, and the fix for each fixture type ("A dripping tap usually needs a new washer or cartridge"). `WasteStats` groups waste by hour and by fixture, and finds the peak hour.
 
-### 4. Demo data (`AcquaSave/Logic/DemoData.swift`)
+### 4. Demo data (`AquaSave/Logic/DemoData.swift`)
 
 Until hardware exists, the app seeds 75 days of plausible readings for the fixtures picked in setup: 14 measuring days of a typical home, then about two months of using less, with a few bad days, one past sensor outage, and realistic waste (warm-up water before showers, night-time drips, taps left on). **Settings › Reset demo data** reseeds for the current sensors.
 
@@ -126,7 +126,7 @@ credits = floor(saved × (1 + tier boost) / 10)
 
 1 credit is worth about 1 cent, which is €1 per m³ saved, roughly half what the water costs. Credits are paid against the baseline, not the limit, so they follow real savings instead of rewarding a day that only just squeaks under.
 
-### Tiers (`AcquaSave/Logic/Tiers.swift`)
+### Tiers (`AquaSave/Logic/Tiers.swift`)
 
 | Tier | Liters saved | Best streak | Credit boost | Sensor discount |
 | --- | --- | --- | --- | --- |
@@ -137,7 +137,7 @@ credits = floor(saved × (1 + tier boost) / 10)
 
 Both bars have to be cleared: savings alone can come from one good month, and a streak alone from a small home.
 
-### Rewards (`AcquaSave/Logic/RewardCatalog.swift`)
+### Rewards (`AquaSave/Logic/RewardCatalog.swift`)
 
 | Reward | Credits |
 | --- | --- |
@@ -154,7 +154,7 @@ Redeeming creates a demo voucher code (`AQS-XXXX-XXXX`). Partner vouchers aren't
 
 ## Design
 
-Tokens live in [`AcquaSave/Design/Theme.swift`](AcquaSave/Design/Theme.swift).
+Tokens live in [`AquaSave/Design/Theme.swift`](AquaSave/Design/Theme.swift).
 
 | Token | Light | Dark | Used for |
 | --- | --- | --- | --- |
@@ -198,8 +198,8 @@ Accessibility so far: VoiceOver labels on the drop, credit amounts and simulator
 ## Project structure
 
 ```
-AcquaSave/
-├── AcquaSave/                   iPhone app
+AquaSave/
+├── AquaSave/                   iPhone app
 │   ├── Models/                  SwiftData models, device categories, sensor presets
 │   ├── Logic/                   Credits and ledger, tiers, waste stats, reward catalog, demo data
 │   ├── Design/                  Theme and credit sign, water drop, waste charts and lists
@@ -220,12 +220,12 @@ AcquaSave/
 
 ## Build and run
 
-Requirements: Xcode 27.2 (iOS 26.2 SDK or later) on macOS. Open `AcquaSave.xcodeproj`, pick the **AcquaSave** scheme and run. Signing uses your own team. The App Group is `group.com.alessandrosignorile.AquaSave`.
+Requirements: Xcode 27.2 (iOS 26.2 SDK or later) on macOS. Open `AquaSave.xcodeproj`, pick the **AquaSave** scheme and run. Signing uses your own team. The App Group is `group.com.alessandrosignorile.AquaSave`.
 
 From the command line (if `xcode-select` points at the Command Line Tools, prefix the command with `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer`):
 
 ```bash
-xcodebuild build -project AcquaSave.xcodeproj -scheme AcquaSave -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO
+xcodebuild build -project AquaSave.xcodeproj -scheme AquaSave -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO
 ```
 
 The first launch shows onboarding. Finishing it seeds the demo data for the fixtures you picked. To try things without waiting for real days to pass, use the beta **Try a reading** buttons on Today (shower, hand wash, laundry, warm-up, tap left on, leak), the +2/+5/+20 L buttons on each device, or long-press a device to simulate it going offline.

@@ -12,7 +12,7 @@ import WidgetKit
 struct AquaSaveWidgetControl: ControlWidget {
     var body: some ControlWidgetConfiguration {
         StaticControlConfiguration(
-            kind: "alessandrosignorile.com.AcquaSave.AquaSaveWidget",
+            kind: "alessandrosignorile.com.AquaSave.AquaSaveWidget",
             provider: Provider()
         ) { value in
             ControlWidgetToggle(

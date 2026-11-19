@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7E99C1312F59C95A00F8D911"
-               BuildableName = "AcquaSave.app"
-               BlueprintName = "AcquaSave"
-               ReferencedContainer = "container:AcquaSave.xcodeproj">
+               BuildableName = "AquaSave.app"
+               BlueprintName = "AquaSave"
+               ReferencedContainer = "container:AquaSave.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7E99C1312F59C95A00F8D911"
-            BuildableName = "AcquaSave.app"
-            BlueprintName = "AcquaSave"
-            ReferencedContainer = "container:AcquaSave.xcodeproj">
+            BuildableName = "AquaSave.app"
+            BlueprintName = "AquaSave"
+            ReferencedContainer = "container:AquaSave.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7E99C1312F59C95A00F8D911"
-            BuildableName = "AcquaSave.app"
-            BlueprintName = "AcquaSave"
-            ReferencedContainer = "container:AcquaSave.xcodeproj">
+            BuildableName = "AquaSave.app"
+            BlueprintName = "AquaSave"
+            ReferencedContainer = "container:AquaSave.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

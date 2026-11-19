@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-/// A physical AcquaSave sensor clipped onto something that emits water.
+/// A physical AquaSave sensor clipped onto something that emits water.
 @Model
 final class Sensor {
     var name: String
