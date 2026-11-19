@@ -55,14 +55,6 @@
 		7ECB0B882F5A3BB000E4B095 /* Exceptions for "AcquaSave" folder in "AquaSaveWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Components/AchievementToastView.swift,
-				Components/AnimatedNumbersText.swift,
-				Components/RingView.swift,
-				Hydration/BottleHydrationChartFitness.swift,
-				Hydration/HydrationAnalytics.swift,
-				Hydration/HydrationBottleCard.swift,
-				Hydration/HydrationRecord.swift,
-				Models/DailyNote.swift,
 				Services/WidgetBridge.swift,
 			);
 			target = 7ECB0B682F5A3B0B00E4B095 /* AquaSaveWidgetExtension */;

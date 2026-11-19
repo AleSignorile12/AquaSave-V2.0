@@ -86,8 +86,8 @@ struct AquaSaveWidgetView: View {
                 .tint(.green)
 
             HStack(spacing: 12) {
-                miniStat(title: "Goal", value: "\(Int(entry.dailyGoal))L")
-                miniStat(title: "Points", value: "+\(entry.points)")
+                miniStat(title: "Limit", value: "\(Int(entry.dailyGoal))L")
+                miniStat(title: "Credits", value: "\(entry.points)")
                 miniStat(title: "Streak", value: "\(entry.streak)d")
             }
             .font(.caption)
@@ -115,7 +115,7 @@ struct AquaSaveWidget: Widget {
             AquaSaveWidgetView(entry: entry)
         }
         .configurationDisplayName("AquaSave")
-        .description("Today’s water usage, goal, points, and streak.")
+        .description("Today’s water use, daily limit, credits and streak.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
